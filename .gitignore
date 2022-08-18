@@ -3,6 +3,7 @@ download
 git_installed_folder
 interpreter
 vscode
+sqlite
 # ./*/.venv
 # ./*/*.sqlite3
 
