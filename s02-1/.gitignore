@@ -1,13 +1,3 @@
-.venv
-download
-git_installed_folder
-interpreter
-vscode
-# ./*/.venv
-# ./*/*.sqlite3
-
-
-
 # Django #
 *.log
 *.pot
