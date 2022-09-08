@@ -17,8 +17,8 @@
           <input type="submit" value="Submit" class="btn btn-dark my-1" />
         </form>
         <div class="posts">
-          {{posts.p1.title}}
-          {% for post in posts.values %}
+          {{posts.title}}
+          {% for post in posts %}
           <div class="post bg-white my-1 p-1">
             <div>
               <a href="profile.html">
@@ -27,7 +27,7 @@
                   src="https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=200"
                   alt=""
                 />
-                <h4>{{post.author}}</h4>
+                <h4>{{post.author.user.username}}</h4>
               </a>
             </div>
 
@@ -36,7 +36,8 @@
               <p class="my-1">
                 {{post.body}}
               </p>
-              {{post.date|timesince}}
+              {{post.created_at|timesince}}
+              {{post.updated_at|timesince}}
               <button class="btn">
                 <i class="fas fa-thumbs-up"></i> <span>4</span>
               </button>
