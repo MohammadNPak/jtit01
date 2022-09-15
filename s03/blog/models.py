@@ -23,3 +23,4 @@ class Post(models.Model):
 
 
 
+# select post.title  from post join userprofile on post.user_id = userprofile.id join user on userprofile.id = user.id where user.username="abc";

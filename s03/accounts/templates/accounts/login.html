@@ -4,17 +4,22 @@
 {% include '_navbar.html' %}
     <section class="container">
       <!-- Alert -->
-      <div class="alert alert-danger">Invalid Credentials</div>
+      {% if messages %}
+      {% for message in messages %} 
+      <div class="alert alert-danger">{{message}}</div>
+      {% endfor %}
+      {% endif %}
       <h1 class="large text-primary">Sign In</h1>
       <p class="lead">
         <i class="fas fa-user"></i> Sign into your account
       </p>
-      <form action="dashboard.html" class="form">
+      <form action="{% url 'login' %}" method="post" class="form">
+        {% csrf_token %}
         <div class="form-group">
-          <input type="email" placeholder="Email Address" />
+          <input type="text" placeholder="UserName" name="username" />
         </div>
         <div class="form-group">
-          <input type="password" placeholder="Password" minlength="6" />
+          <input type="password" placeholder="Password" name="password" />
         </div>
         <input type="submit" value="Login" class="btn btn-primary" />
       </form>
